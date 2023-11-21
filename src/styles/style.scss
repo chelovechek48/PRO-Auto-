@@ -3,6 +3,10 @@
 @forward 'blocks';
 @use 'vars' as *;
 
+* {
+  font-family: "Geometria", sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
