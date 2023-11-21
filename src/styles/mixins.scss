@@ -1,0 +1,12 @@
+@use './vars/' as *;
+
+@mixin hover-fall-effect {
+  background-image: linear-gradient($red 50%, transparent 50%);
+  background-size: 100% 200%;
+  background-position-y: 100%;
+  @media (hover: hover) {
+    &:hover {
+      background-position-y: 0%;
+    }
+  }
+}
