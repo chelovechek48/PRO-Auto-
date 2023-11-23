@@ -1,0 +1,16 @@
+@use '../vars' as *;
+@use '../mixins' as *;
+
+.button {
+  color: $white;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+
+  &_effect_fall {
+    background-color: transparent;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 0 0 0.25rem $red inset;
+    @include hover-fall-effect;
+  }
+}
