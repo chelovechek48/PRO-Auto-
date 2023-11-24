@@ -1,7 +1,10 @@
 import '@/styles/style';
 
+const rootHTML = document.querySelector(':root');
+
 const burger = document.querySelector('.menu-burger');
 const headerList = document.querySelector('.header__list');
+const headerCall = document.querySelector('.header__call');
 
 let burgerHasOpen = false;
 
@@ -15,6 +18,9 @@ const hideMenu = () => {
 };
 
 burger.addEventListener('click', () => {
+  const headerCallHeight = headerCall.clientHeight;
+  rootHTML.style.setProperty('--header__callHeight', `${headerCallHeight}px`);
+
   toggleMenu();
 
   burgerHasOpen = !burgerHasOpen;
