@@ -1,21 +1,46 @@
 import '@/styles/style';
 
 const burger = document.querySelector('.menu-burger');
-
-const headerCall = document.querySelector('.header__call');
-const rootHTML = document.querySelector(':root');
 const headerList = document.querySelector('.header__list');
 
 let burgerHasOpen = false;
 
-burger.addEventListener('click', () => {
-  const headerCallHeight = headerCall.offsetHeight;
-  rootHTML.style.setProperty('--header__callHeight', `${headerCallHeight}px`);
-
+const toggleMenu = () => {
   burger.classList.toggle('active');
   headerList.classList.toggle('active');
+};
+const hideMenu = () => {
+  burger.classList.remove('active');
+  headerList.classList.remove('active');
+};
+
+burger.addEventListener('click', () => {
+  toggleMenu();
 
   burgerHasOpen = !burgerHasOpen;
-  const burgerLabelText = burgerHasOpen === false ? 'открыть меню' : 'закрыть меню';
+  const burgerLabelText = burgerHasOpen ? 'закрыть меню' : 'открыть меню';
   burger.setAttribute('aria-label', burgerLabelText);
+});
+
+const menuItems = document.querySelectorAll('.header__list-item');
+menuItems.forEach((el) => {
+  el.addEventListener('click', () => {
+    hideMenu();
+  });
+});
+
+['resize', 'DOMContentLoaded'].forEach((event) => {
+  const changeTabindex = () => {
+    const tabindexItems = document.querySelectorAll('[data-tabindex]');
+    tabindexItems.forEach((el) => {
+      const burgerIsVisible = window.getComputedStyle(burger).display !== 'none';
+      if (burgerIsVisible) {
+        const newIndex = el.getAttribute('data-tabindex');
+        el.setAttribute('tabindex', newIndex);
+      } else {
+        el.removeAttribute('tabindex');
+      }
+    });
+  };
+  window.addEventListener(event, changeTabindex);
 });

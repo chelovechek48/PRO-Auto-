@@ -29,6 +29,7 @@
   }
 
   &__logo {
+    @include focus-effect;
     @media (min-width: calc($laptop-small + 1px)) {
       height: 3.5rem;
     }
@@ -47,6 +48,7 @@
     align-items: center;
     overflow: auto;
     text-transform: uppercase;
+  
     @media (min-width: calc($laptop-small + 1px)) {
       font-size: 1rem;
       color: $white;
@@ -56,6 +58,7 @@
       &-item {
         padding: 2.25rem 0.5rem;
         @include hover-fall-effect;
+        @include focus-effect($outline-offset: -0.25rem);
       }
     }
     @media (max-width: $laptop-small) {
@@ -77,8 +80,14 @@
       left: 0;
       width: 100%;
       transform: translateY(-100%);
+      visibility: hidden;
       &.active {
+        visibility: visible;
         transform: translateY(0%);
+      }
+
+      &-item {
+        @include focus-effect($outline-color: $red, $outline-offset: 0.25rem);
       }
     }
   }

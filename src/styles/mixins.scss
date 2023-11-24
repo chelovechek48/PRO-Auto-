@@ -10,3 +10,11 @@
     }
   }
 }
+
+@mixin focus-effect($outline-color: $white, $outline-offset: 0.5rem) {
+  &:focus {
+    outline: solid $outline-color;
+    outline-offset: $outline-offset;
+    outline-width: 0.25rem;
+  }
+}

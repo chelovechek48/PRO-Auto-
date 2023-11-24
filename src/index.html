@@ -9,7 +9,7 @@
 <body>
   <header class="header">
     <nav class="header__container container">
-      <a class="header__logo" href="#" aria-label="открыть главную страницу сайта">
+      <a class="header__logo" data-tabindex="1" href="#" aria-label="открыть главную страницу сайта">
         <img src="assets/images/logo.svg" alt="логотип сайта">
       </a>
       <ul class="header__list">
@@ -29,18 +29,18 @@
           aria-label="перейти к контактам">
           контакты</a></li>
       </ul>
-      <button class="button button_effect_fall header__call"
+      <button data-tabindex="5" class="button button_effect_fall header__call"
         aria-label="заказать звонок">
         заказать звонок
       </button>
-      <button class="button header__icon"
+      <button data-tabindex="2" class="button header__icon"
         aria-label="открыть поиск">
         <img src="assets/images/search.svg" alt="иконка поиска">
       </button>
-      <button class="button header__icon" aria-label="открыть корзину с товарами">
+      <button data-tabindex="3" class="button header__icon" aria-label="открыть корзину с товарами">
         <img src="assets/images/cart.svg" alt="иконка корзины">
       </button>
-      <button class="menu-burger" aria-label="открыть меню">
+      <button data-tabindex="4" class="button menu-burger" aria-label="открыть меню">
         <span class="menu-burger__item"></span>
         <span class="menu-burger__item"></span>
         <span class="menu-burger__item"></span>
