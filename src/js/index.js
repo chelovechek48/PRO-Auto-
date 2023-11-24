@@ -31,11 +31,11 @@ menuItems.forEach((el) => {
 
 ['resize', 'DOMContentLoaded'].forEach((event) => {
   const changeTabindex = () => {
-    const tabindexItems = document.querySelectorAll('[data-tabindex]');
+    const tabindexItems = document.querySelectorAll('[data-mobile-tabindex]');
     tabindexItems.forEach((el) => {
       const burgerIsVisible = window.getComputedStyle(burger).display !== 'none';
       if (burgerIsVisible) {
-        const newIndex = el.getAttribute('data-tabindex');
+        const newIndex = el.getAttribute('data-mobile-tabindex');
         el.setAttribute('tabindex', newIndex);
       } else {
         el.removeAttribute('tabindex');
