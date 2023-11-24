@@ -1,0 +1,48 @@
+@use '../../vars' as *;
+
+.banner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-image: image-set(
+    url("@images/hero/hero-bg.avif") type("image/avif"),
+    url("@images/hero/hero-bg.jpg") type("image/jpg")
+  );
+  background-color: $black-bg;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+
+  @media (min-width: calc($laptop-small + 1px)) {
+    padding-top: 6rem;
+  }
+  @media (max-width: $laptop-small) {
+    padding-top: 7.5rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: calc($padding-container * 2);
+    padding-bottom: calc($padding-container * 2);
+
+    @media (min-width: calc($laptop-small + 1px)) {
+      gap: 3rem;
+      align-items: flex-start;
+    }
+    @media (max-width: $laptop-small) {
+      gap: 1.5rem;
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    color: $white;
+    font-weight: 700;
+    font-size: min(3rem, 9vw);
+    word-spacing: 1000vw;
+    text-transform: uppercase;
+  }
+}

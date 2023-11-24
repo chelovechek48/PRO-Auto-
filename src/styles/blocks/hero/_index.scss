@@ -1,0 +1,8 @@
+@forward 'banner.scss';
+@forward 'features.scss';
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

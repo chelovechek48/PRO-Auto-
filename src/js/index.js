@@ -50,3 +50,8 @@ menuItems.forEach((el) => {
   };
   window.addEventListener(event, changeTabindex);
 });
+
+const bannerButton = document.querySelector('.banner__button');
+bannerButton.addEventListener('focus', () => {
+  hideMenu();
+});
