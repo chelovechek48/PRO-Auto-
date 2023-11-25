@@ -1,0 +1,67 @@
+@use '../vars/' as *;
+@use '../mixins/' as *;
+
+.card {
+  position: relative;
+  z-index: 1;
+  flex: 1 0 300px;
+  @media (min-width: calc($mobile + 1px)) {
+    aspect-ratio: 5/4;
+  }
+  @media (max-width: $mobile) {
+    aspect-ratio: 5/2;
+    min-width: 100vw;
+    margin-left: - ($padding-container);
+    margin-right: - ($padding-container);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    height: 100%;
+    @include focus-effect($outline-color: $white, $outline-offset: -1rem);
+    @media (min-width: calc($mobile + 1px)) {
+      opacity: 0;
+      &:hover, &:focus {
+        opacity: 1;
+        background-color: rgba(#000, 0.5);
+      }
+    }
+    @media (max-width: $mobile) {
+      background-color: rgba(#000, 0.5);
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $white;
+    text-transform: uppercase;
+  }
+
+  &__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: -1;
+    object-fit: cover;
+    transition: 0.25s;
+    @media (min-width: calc($mobile + 1px)) {
+      object-position: bottom;
+    }
+    @media (max-width: $mobile) {
+      object-position: center;
+    }
+  }
+
+  @media (min-width: calc($mobile + 1px)) {
+    &:hover &__background {
+      object-position: center;
+    }
+  }
+  
+}
