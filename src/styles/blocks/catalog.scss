@@ -1,0 +1,25 @@
+@use '../vars/' as *;
+
+.catalog {
+  background-image: image-set(
+    url("@images/catalog/catalog-bg.avif") type("image/avif"),
+    url("@images/catalog/catalog-bg.webp") type("image/webp"),
+    url("@images/catalog/catalog-bg.jpg") type("image/jpg")
+  );
+  background-color: #FCFCFC;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    @media (min-width: calc($mobile + 1px)) {
+      gap: $padding-container;
+    }
+    @media (max-width: $mobile) {
+      gap: 0.5rem;
+    }
+  }
+}
