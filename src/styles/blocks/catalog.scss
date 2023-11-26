@@ -1,6 +1,8 @@
 @use '../vars/' as *;
 
 .catalog {
+  color: $black-text;
+
   background-image: image-set(
     url("@images/catalog/catalog-bg.avif") type("image/avif"),
     url("@images/catalog/catalog-bg.webp") type("image/webp"),
