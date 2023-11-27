@@ -4,9 +4,10 @@
   flex: 1;
   display: flex;
   align-items: center;
+  background-image: url('@images/hero/hero-bg.jpg');
   background-image: image-set(
-    url("@images/hero/hero-bg.avif") type("image/avif"),
-    url("@images/hero/hero-bg.jpg") type("image/jpg")
+    url('@images/hero/hero-bg.avif') type('image/avif'),
+    url('@images/hero/hero-bg.jpg') type('image/jpg')
   );
   background-color: $black-bg;
   background-repeat: no-repeat;

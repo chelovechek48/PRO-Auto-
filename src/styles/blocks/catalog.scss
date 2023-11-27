@@ -3,10 +3,11 @@
 .catalog {
   color: $black-text;
 
+  background-image: url('@images/catalog/catalog-bg.jpg');
   background-image: image-set(
-    url("@images/catalog/catalog-bg.avif") type("image/avif"),
-    url("@images/catalog/catalog-bg.webp") type("image/webp"),
-    url("@images/catalog/catalog-bg.jpg") type("image/jpg")
+    url('@images/catalog/catalog-bg.avif') type('image/avif'),
+    url('@images/catalog/catalog-bg.webp') type('image/webp'),
+    url('@images/catalog/catalog-bg.jpg') type('image/jpg')
   );
   background-color: #FCFCFC;
   background-repeat: no-repeat;
