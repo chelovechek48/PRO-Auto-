@@ -18,3 +18,14 @@
     outline-width: 0.25rem;
   }
 }
+
+@mixin slice-corner($slice-width: 0) {
+  clip-path: polygon(
+    $slice-width 0%,
+    100% 0,
+    100% calc(100% - $slice-width),
+    calc(100% - $slice-width) 100%,
+    0 100%,
+    0 $slice-width
+  );
+}

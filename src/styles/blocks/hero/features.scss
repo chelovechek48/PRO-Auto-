@@ -1,4 +1,5 @@
 @use '../../vars' as *;
+@use '../../mixins' as *;
 
 .features {
   background-color: $black-bg;
@@ -23,14 +24,7 @@
       &:first-child {
         @media (min-width: calc($mobile + 1px)) {
           background-color: $red;
-          clip-path: polygon(
-            4rem 0%,
-            100% 0,
-          100% calc(100% - 4rem),
-          calc(100% - 4rem) 100%,
-          0 100%,
-          0 4rem
-          );
+          @include slice-corner($slice-width: 4rem);
         }
       }
       @media (max-width: $mobile) {
