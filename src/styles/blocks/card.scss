@@ -72,4 +72,26 @@
     }
   }
   
+  &__preload {
+    background-size: cover;
+    background-position: bottom;
+    &_tools {
+      background-image: url('@images/catalog/tools_preload.jpg');
+    }
+    &_accessories {
+      background-image: url('@images/catalog/accessories_preload.jpg');
+    }
+    &_accumulator {
+      background-image: url('@images/catalog/accumulator_preload.jpg');
+    }
+    &_oil {
+      background-image: url('@images/catalog/oil_preload.jpg');
+    }
+    &_chemistry {
+      background-image: url('@images/catalog/chemistry_preload.jpg');
+    }
+    &_autocosmetics {
+      background-image: url('@images/catalog/autocosmetics_preload.jpg');
+    }
+  }
 }
