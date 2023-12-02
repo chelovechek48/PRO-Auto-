@@ -1,0 +1,61 @@
+@use '../vars/' as *;
+@use '../mixins/' as *;
+
+.footer {
+  padding: 2rem 0;
+  background-color: $black-bg;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem 3rem;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    @include focus-effect;
+    height: 3.5rem;
+    img {
+      height: 100%;
+    }
+  }
+
+  &__contacts {
+    color: $white;
+    font-size: 1rem;
+    font-style: normal;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem 3rem;
+    width: 100%;
+    
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+  
+  &__adress-link {
+    word-break: break-all;
+    text-align: center;
+    @include focus-effect;
+    &::before {
+      content: '';
+      padding-left: 2rem;
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      background-size: 1.25em;
+    }
+  }
+  &__email::before {
+    background-image: url('@icons/email.svg');
+  }
+  &__tel::before {
+    background-image: url('@icons/phone.svg');
+  }
+}
